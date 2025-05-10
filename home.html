@@ -1,100 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Site Name</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unity Game Development Services</title>
   <style>
-    /* Reset & base */
+    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; line-height: 1.6; }
 
     /* Header / Navigation */
     header {
-      background: #4CAF50;
+      background: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
     }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    .menu a {
       color: #fff;
       text-decoration: none;
-      margin-left: 1rem;
+      margin-left: 1.5rem;
+      font-weight: 500;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    .menu a:hover { text-decoration: underline; }
 
-    /* Hero section */
+    /* Hero Section */
     .hero {
-      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
-      height: 400px;
+      background: url('https://via.placeholder.com/1200x500?text=Unity+Game+Dev') center/cover no-repeat;
+      height: 500px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       color: #fff;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 0 1rem;
     }
-    .hero h1 { font-size: 3rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; text-shadow: 0 2px 6px rgba(0,0,0,0.8); }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 1.5rem; text-shadow: 0 1px 4px rgba(0,0,0,0.7); }
+    .btn {
+      background: #4CAF50;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .btn:hover { background: #45a049; }
 
-    /* Features */
-    .features {
+    /* Services Section */
+    .services {
+      padding: 3rem 2rem;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .services h2 { margin-bottom: 2rem; font-size: 2rem; }
+    .service-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      padding: 2rem;
     }
-    .feature {
-      background: #f9f9f9;
+    .service {
+      background: #fff;
       padding: 1.5rem;
       border-radius: 8px;
-      text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .feature h3 { margin-bottom: 0.5rem; }
-    .feature p { font-size: 0.9rem; color: #666; }
+    .service h3 { margin-bottom: 1rem; color: #1e1e2f; }
+    .service p { color: #555; }
+
+    /* Portfolio Section */
+    .portfolio {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .portfolio h2 { margin-bottom: 2rem; font-size: 2rem; }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .project img { width: 100%; display: block; }
+    .project .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(30,30,47,0.7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .project:hover .overlay { opacity: 1; }
+    .overlay p { padding: 1rem; }
 
     /* Footer */
     footer {
-      background: #333;
-      color: #eee;
+      background: #1e1e2f;
+      color: #ccc;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
     }
     footer a { color: #4CAF50; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
+  <!-- Header / Nav -->
   <header>
     <nav>
-      <div class="logo"><strong>YourLogo</strong></div>
+      <div class="logo">YourName Unity Dev</div>
       <div class="menu">
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Welcome to Your Site</h1>
+    <h1>Professional Unity Game Development</h1>
+    <p>From concept to launch—innovative, high-performance games built on Unity tailored to your vision.</p>
+    <button class="btn">Get a Free Quote</button>
   </section>
 
-  <section class="features">
-    <div class="feature">
-      <h3>Feature One</h3>
-      <p>Short description of this feature. Explain what makes it awesome.</p>
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>Custom Game Development</h3>
+        <p>2D &amp; 3D games, bespoke mechanics, and engaging gameplay.</p>
+      </div>
+      <div class="service">
+        <h3>UI/UX & Art Integration</h3>
+        <p>Seamless UI toolkit, polish art assets, and UX flow design.</p>
+      </div>
+      <div class="service">
+        <h3>Ads & Monetization</h3>
+        <p>Unity Ads, IronSource, IAP setup, and revenue optimization.</p>
+      </div>
+      <div class="service">
+        <h3>Multiplayer & Networking</h3>
+        <p>Photon, Mirror, or custom backend for real-time multiplayer.</p>
+      </div>
+      <div class="service">
+        <h3>QA & Testing</h3>
+        <p>Automated testing, performance profiling, and bug fixes.</p>
+      </div>
+      <div class="service">
+        <h3>Post-Launch Support</h3>
+        <p>Updates, feature expansion, and long-term maintenance.</p>
+      </div>
     </div>
-    <div class="feature">
-      <h3>Feature Two</h3>
-      <p>Short description of this feature. Explain what makes it awesome.</p>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio">
+    <h2>Recent Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1">
+        <div class="overlay"><p>Action Runner (iOS & Android)</p></div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2">
+        <div class="overlay"><p>Puzzle Quest (WebGL)</p></div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3">
+        <div class="overlay"><p>MMO Arena (PC)</p></div>
+      </div>
     </div>
-    <div class="feature">
-      <h3>Feature Three</h3>
-      <p>Short description of this feature. Explain what makes it awesome.</
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us: <a href="mailto:hello@unitydev.com">hello@unitydev.com</a> | +123 456 7890</p>
+    <p>&copy; 2025 YourName Unity Dev. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
